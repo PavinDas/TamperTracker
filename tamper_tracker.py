@@ -8,13 +8,13 @@ from datetime import datetime
 api = open('api-key.txt','r').read()
 mail = open('mail-id.txt','r').read()
 uname = open('username.txt','r').read()
-FOLDER_TO_MONITOR = "/home/pavin/Panda/Python/Text"
+FOLDER_TO_MONITOR = input("Enter directory path: ")
 HASH_STORAGE_FILE = "file_hashes.json"
 JIRA_URL = f"https://{uname}.atlassian.net/rest/api/2/issue/"
 JIRA_AUTH = (mail, api)
 JIRA_PROJECT_KEY = "KAN"
 JIRA_ISSUE_TYPE = "Task"
-CHECK_INTERVAL = 15 
+CHECK_INTERVAL = int(input("Enter time interval in seconds: ")) 
 
 
 def calculate_file_hash(file_path):
